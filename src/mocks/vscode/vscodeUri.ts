@@ -1,5 +1,8 @@
 import * as models from '../../models';
 
+/**
+ * Mock VSCodeUri (implements IVSCodeUri)
+ */
 export class MockVSCodeUri implements models.IVSCodeUri {
   constructor(private _scheme: string, private _authority: string, private _path: string, private _query: string, private _fragment: string) {
   }

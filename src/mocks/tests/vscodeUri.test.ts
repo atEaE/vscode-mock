@@ -7,9 +7,11 @@ import { MockVSCodeUri } from '../vscode';
 const _empty = '';
 
 describe('MockVSCodeUri Tests', () => {
-  describe('implements testing', () => {
-    // act & assert
-    var mock: IVSCodeUri = new MockVSCodeUri(_empty, _empty, _empty, _empty, _empty);
+  describe('type check', () => {
+    it('implements testing', () => {
+      // act & assert
+      const mock: IVSCodeUri = new MockVSCodeUri(_empty, _empty, _empty, _empty, _empty);
+    });
   });
 
   describe('property check', () => {
