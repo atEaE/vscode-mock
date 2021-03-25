@@ -30,6 +30,7 @@
 		"test-watch": "tsc -watch -p ./",
 		"pretest": "npm run test-compile && npm run lint",
 		"lint": "eslint src --ext ts",
+		"format": "npm run lint --fix",
 		"test": "node ./out/test/runTest.js",
 		"test:mock": "npm run test-compile && npm run lint && npx mocha ./out/mocks/tests/**/*.test.js"
 	},
