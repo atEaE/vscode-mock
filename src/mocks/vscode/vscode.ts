@@ -5,7 +5,7 @@ import * as models from '../../models';
  */
 export class MockVSCode implements models.IVSCode {
   /**
-   * get version information.
+   * The version of the editor.
    */
   public get version(): string {
     return '1.0.0';

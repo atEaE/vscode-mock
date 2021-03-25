@@ -1,8 +1,10 @@
 import { assert } from 'chai';
+
+// target modules.
 import { MockVSCode } from '../vscode';
 
 describe('MockVSCode Tests', () => {
-  describe('property version', () => {
+  describe('property check', () => {
     it('get version', () => {
       // arrange
       const mock = new MockVSCode();
