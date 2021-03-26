@@ -29,5 +29,5 @@ describe('MockVSCodeWorkspaceConfiguration Tests', () => {
       assert.isFalse(mock.has('key3'));
       assert.isFalse(mock.has('key4'));
     });
-  })
+  });
 });

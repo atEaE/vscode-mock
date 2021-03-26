@@ -10,7 +10,7 @@ export function generateNoOpenWorkspace(): IVSCodeWorkspace {
 /**
  * Mock VSCodeWorkspace (implements IVSCodeWorkspace)
  */
-export class MockVSCodeWorkspace {
+export class MockVSCodeWorkspace implements IVSCodeWorkspace {
   constructor(private _workspaceFolders: IVSCodeWorkspaceFolder[] | undefined) { }
   public get workspaceFolders(): readonly IVSCodeWorkspaceFolder[] | undefined {
     return this._workspaceFolders;
