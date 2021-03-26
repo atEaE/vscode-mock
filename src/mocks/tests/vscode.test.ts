@@ -1,13 +1,13 @@
 import { assert } from 'chai';
 
 // target modules.
-import { MockVSCode } from '../vscode';
+import * as mocks from '../vscode';
 
 describe('MockVSCode Tests', () => {
   describe('property check', () => {
     it('get version', () => {
       // arrange
-      const mock = new MockVSCode();
+      const mock = new mocks.MockVSCode(mocks.generateNoOpenWorkspace());
 
       // act & assert
       assert.equal(mock.version, '1.0.0');
