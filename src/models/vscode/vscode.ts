@@ -5,4 +5,4 @@ export interface IVSCode {
   workspace: IVSCodeWorkspace;
 }
 
-vscode.Uri;
+vscode.workspace.getConfiguration();
