@@ -4,7 +4,8 @@ import * as models from '../../models';
  * Mock VSCodeWorkspaceConfiguration (implements IVSCodeWorkspaceConfiguration)
  */
 export class MockVSCodeWorkspaceConfiguration implements models.IVSCodeWorkspaceConfiguration {
-  private _config: Map<string, any>;
+  private readonly _config: Map<string, any>;
+
   constructor(config: Map<string, any> | undefined) {
     this._config = config ? config : new Map<string, any>();
   }

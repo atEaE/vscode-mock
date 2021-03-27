@@ -17,9 +17,12 @@ export function generateNoOpenWorkspace(): IVSCodeWorkspace {
  * Mock VSCodeWorkspace (implements IVSCodeWorkspace)
  */
 export class MockVSCodeWorkspace implements IVSCodeWorkspace {
-  private _configurationRoot: Map<string, any>;
-  constructor(private _workspaceFolders: IVSCodeWorkspaceFolder[] | undefined, _configRoot: Map<string, any> | undefined) {
-    this._configurationRoot = _configRoot ? _configRoot : new Map<string, any>();
+  private readonly _workspaceFolders: IVSCodeWorkspaceFolder[] | undefined;
+  private readonly _configurationRoot: Map<string, any>;
+
+  constructor(_workspaceFolders: IVSCodeWorkspaceFolder[] | undefined, configurationRoot: Map<string, any> | undefined) {
+    this._workspaceFolders = _workspaceFolders;
+    this._configurationRoot = configurationRoot ? configurationRoot : new Map<string, any>();
   }
 
   public get workspaceFolders(): readonly IVSCodeWorkspaceFolder[] | undefined {

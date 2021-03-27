@@ -1,3 +1,4 @@
+export * from './vscodeManager';
 export * from './vscode';
 export * from './vscodeUri';
 export * from './vscodeWorkspace';

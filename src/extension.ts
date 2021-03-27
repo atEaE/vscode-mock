@@ -1,17 +1,10 @@
 import * as vscode from 'vscode';
+import { CompositionService } from './services/compositionService';
 import * as models from './models';
-import * as mocks from './mocks';
 
 export function activate(context: vscode.ExtensionContext) {
-	const mock = new mocks.MockVSCodeUri('http', 'www.msft.com', '/some/path', 'query', 'fragment');
-	var got = mock.with({
-		scheme: 'https',
-		authority: 'www.msft.co.jp',
-		path: '/any/path',
-		query: 'query-other',
-		fragment: 'fragment-other'
-	});
-	console.log(got);
+	const service = new CompositionService();
+	const vsCodeManager = service.get(models.SYMBOLS.IVSCode);
 
 	console.log('Congratulations, your extension "vscode-mock" is now active!');
 	let disposable = vscode.commands.registerCommand('vscode-mock.helloWorld', () => {
