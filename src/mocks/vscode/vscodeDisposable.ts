@@ -5,7 +5,7 @@ import { IVSCodeDisposable } from '../../models/vscode';
  */
 export class MockVSCodeDisposable implements IVSCodeDisposable {
   constructor(private _delegate: () => any) { }
-  dispose() {
+  public dispose() {
     return this._delegate();
   }
 }

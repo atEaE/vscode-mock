@@ -1,3 +1,3 @@
-export interface RegisterCommandRecord {
+export interface IRegisterCommandRecord {
   command: string
 }

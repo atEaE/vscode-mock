@@ -6,7 +6,7 @@ describe('MockVSCodeDisposable Tests', () => {
   describe('type check', () => {
     it('implements testing', () => {
       // act & assert
-      const mock: IVSCodeDisposable = new MockVSCodeDisposable(() => { });
+      const mock: IVSCodeDisposable = new MockVSCodeDisposable(() => { /* allow empty function. */ });
     });
   });
 });

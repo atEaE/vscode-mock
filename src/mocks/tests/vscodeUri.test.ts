@@ -64,7 +64,7 @@ describe('MockVSCodeUri Tests', () => {
         authority: 'www.msft.co.jp',
         path: '/any/path',
         query: 'query-other',
-        fragment: 'fragment-other'
+        fragment: 'fragment-other',
       });
 
       // assert

@@ -6,7 +6,7 @@ export function run(): Promise<void> {
 	// Create the mocha test
 	const mocha = new Mocha({
 		ui: 'tdd',
-		color: true
+		color: true,
 	});
 
 	const testsRoot = path.resolve(__dirname, '..');
@@ -29,9 +29,9 @@ export function run(): Promise<void> {
 						c();
 					}
 				});
-			} catch (err) {
-				console.error(err);
-				e(err);
+			} catch (exception) {
+				console.error(exception);
+				e(exception);
 			}
 		});
 	});

@@ -2,16 +2,9 @@ import {
   IVSCodeWorkspace,
   IVSCodeWorkspaceConfiguration,
   IVSCodeWorkspaceFolder,
-  VSCodeConfigurationScope
+  VSCodeConfigurationScope,
 } from '../../models';
 import { MockVSCodeWorkspaceConfiguration } from '../vscode';
-
-/**
- * genereate no opened workspace.
- */
-export function generateNoOpenWorkspace(): IVSCodeWorkspace {
-  return new MockVSCodeWorkspace(undefined, undefined);
-}
 
 /**
  * Mock VSCodeWorkspace (implements IVSCodeWorkspace)
@@ -20,7 +13,10 @@ export class MockVSCodeWorkspace implements IVSCodeWorkspace {
   private readonly _workspaceFolders: IVSCodeWorkspaceFolder[] | undefined;
   private readonly _configurationRoot: Map<string, any>;
 
-  constructor(_workspaceFolders: IVSCodeWorkspaceFolder[] | undefined, configurationRoot: Map<string, any> | undefined) {
+  constructor(
+    _workspaceFolders: IVSCodeWorkspaceFolder[] | undefined,
+    configurationRoot: Map<string, any> | undefined,
+    ) {
     this._workspaceFolders = _workspaceFolders;
     this._configurationRoot = configurationRoot ? configurationRoot : new Map<string, any>();
   }
@@ -41,4 +37,11 @@ export class MockVSCodeWorkspace implements IVSCodeWorkspace {
   public setConfigurationSection(section: string, configuration: Map<string, any>): void {
     this._configurationRoot.set(section, configuration);
   }
+}
+
+/**
+ * genereate no opened workspace.
+ */
+ export function generateNoOpenWorkspace(): IVSCodeWorkspace {
+  return new MockVSCodeWorkspace(undefined, undefined);
 }

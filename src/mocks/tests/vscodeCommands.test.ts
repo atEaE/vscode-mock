@@ -1,7 +1,7 @@
 // target modules
 import { assert } from 'chai';
 import { IVSCodeCommands } from '../../models';
-import { RegisterCommandRecord, TableRecorder } from '../recorder';
+import { IRegisterCommandRecord, TableRecorder } from '../recorder';
 import { MockVSCodeCommands } from '../vscode';
 
 describe('MockVSCodeCommands Tests', () => {
@@ -19,10 +19,12 @@ describe('MockVSCodeCommands Tests', () => {
       const mock: IVSCodeCommands = new MockVSCodeCommands(recorder);
 
       // act
-      mock.registerCommand('mockSampleCommands', () => { });
+      mock.registerCommand('mockSampleCommands', () => {
+        // allow empty function.
+      });
 
       // assert
-      var record = recorder.getRecord<RegisterCommandRecord>(MockVSCodeCommands.RECORD_KEY__REGISTER_COMMAND);
+      var record = recorder.getRecord<IRegisterCommandRecord>(MockVSCodeCommands.RECORD_KEY__REGISTER_COMMAND);
       assert.equal(record.length, 1);
     });
   })

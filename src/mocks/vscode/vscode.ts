@@ -24,7 +24,7 @@ export class MockVSCode implements models.IVSCode {
    * get commands modules.
    */
   public get commands(): models.IVSCodeCommands {
-    return this._commands;
+    return this.commands;
   }
 
   /**
