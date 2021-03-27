@@ -15,6 +15,20 @@ export class VSCodeManager implements models.IVSCodeManager {
   }
 
   /**
+   * get window modules.
+   */
+  public get window(): models.IVSCodeWindow {
+    return this.vscode.window;
+  }
+
+  /**
+   * get commands modules.
+   */
+  public get commands(): models.IVSCodeCommands {
+    return this.vscode.commands;
+  }
+
+  /**
    * get workspace modules.
    */
   public get workspace(): models.IVSCodeWorkspace {

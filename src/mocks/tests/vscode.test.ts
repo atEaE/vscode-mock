@@ -7,7 +7,7 @@ describe('MockVSCode Tests', () => {
   describe('property check', () => {
     it('get version', () => {
       // arrange
-      const mock = new mocks.MockVSCode(mocks.generateNoOpenWorkspace());
+      const mock = new mocks.MockVSCode(new mocks.MockVSCodeCommands(), mocks.generateNoOpenWorkspace());
 
       // act & assert
       assert.equal(mock.version, '1.0.0');

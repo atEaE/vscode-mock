@@ -5,4 +5,6 @@ export * from './vscodeWorkspace';
 export * from './vscodeWorkspaceFolder';
 export * from './vscodeWorkspaceConfiguration';
 export * from './vscodeConfigurationScope';
+export * from './vscodeCommands';
+export * from './vscodeWindow';
 export * from './vscodeDisposable';

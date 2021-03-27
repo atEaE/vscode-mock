@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	console.log('Congratulations, your extension "vscode-mock" is now active!');
 	let disposable = vscode.commands.registerCommand('vscode-mock.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello World from vscode-mock!');
+		vscode.window.terminals[0].sendText('cd ~', true);
 	});
 
 	context.subscriptions.push(disposable);

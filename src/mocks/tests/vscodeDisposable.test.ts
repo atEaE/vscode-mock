@@ -4,7 +4,9 @@ import { MockVSCodeDisposable } from '../vscode';
 
 describe('MockVSCodeDisposable Tests', () => {
   describe('type check', () => {
-    // act & assert
-    const mock: IVSCodeDisposable = new MockVSCodeDisposable(() => { });
+    it('implements testing', () => {
+      // act & assert
+      const mock: IVSCodeDisposable = new MockVSCodeDisposable(() => { });
+    });
   });
 });
