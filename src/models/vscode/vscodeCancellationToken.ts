@@ -1,6 +1,6 @@
-import { IVScodeEvent } from './vscodeEvent';
+import { IVSCodeEvent } from './vscodeEvent';
 
 export interface IVSCodeCancellationToken {
   isCancellationRequested: boolean;
-  onCancellationRequested: IVScodeEvent<any>;
+  onCancellationRequested: IVSCodeEvent<any>;
 }

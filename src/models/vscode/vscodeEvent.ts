@@ -1,6 +1,6 @@
 import { IVSCodeDisposable } from './vscodeDisposable';
 
-export type IVScodeEvent<T> = (
+export type IVSCodeEvent<T> = (
   listener: (e: T) => any,
   thisArgs?: any,
   disposables?: IVSCodeDisposable[],
