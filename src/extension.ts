@@ -9,7 +9,6 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('vscode-mock.helloWorld', () => {
 		vscode.window.terminals[0].sendText('cd ~', true);
 	});
-	vscode.window.terminals
 
 	context.subscriptions.push(disposable);
 }
