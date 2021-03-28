@@ -32,7 +32,8 @@
 		"lint": "eslint src --ext ts",
 		"format": "npm run lint --fix",
 		"test": "node ./out/test/runTest.js",
-		"test:mock": "npm run test-compile && npm run lint && npx mocha ./out/mocks/tests/**/*.test.js"
+		"test:mock": "npm run test-compile && npm run lint && npx mocha ./out/mocks/tests/**/*.test.js",
+		"gen:mock": "npx ts-node index.ts"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.2.18",
@@ -56,7 +57,9 @@
 		"webpack-cli": "^4.4.0"
 	},
 	"dependencies": {
+		"commander": "^7.2.0",
 		"inversify": "^5.1.1",
-		"reflect-metadata": "^0.1.13"
+		"reflect-metadata": "^0.1.13",
+		"ts-node": "^9.1.1"
 	}
 }
