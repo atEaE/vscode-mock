@@ -1,0 +1,36 @@
+name: Push workflow for VSCode mocks
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - hotfix/**
+      - feature/**
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [11.15.0, 12.22.1]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node with ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install package
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Run lint
+        run: yarn lint
+
+      - name: Run Unit tests
+        run: yarn test:mock
+
+      - name: Run Behaviour tests
+        run: yarn test
