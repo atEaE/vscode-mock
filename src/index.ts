@@ -3,9 +3,9 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // copy src
-const ifModelsDir: string = './models/vscode';
-const mocksVSCodeDir: string = './mocks/vscode';
-const mocksRecorderDir: string = './mocks/recorder';
+const ifModelsDir: string = './src/models/vscode';
+const mocksVSCodeDir: string = './src/mocks/vscode';
+const mocksRecorderDir: string = './src/mocks/recorder';
 
 // dest paths
 const modelsVSCodePath: string = path.join('models', 'vscode');
@@ -13,7 +13,7 @@ const mocksRootPath: string = path.join('test', 'mocks',);
 const mocksVSCodePath: string = path.join(mocksRootPath, 'vscode',);
 const mocksRecorderPath: string = path.join(mocksRootPath, 'recorder');
 
-// e.g. npm run gen:mock -o './example'
+// e.g. npx ts-node src/index.ts -o ./.local
 function main() {
   var program = new commander.Command();
   program.version('0.0.1');
