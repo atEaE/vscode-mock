@@ -1,70 +1,47 @@
-# vscode-mock README
+# VSCode mocks
 
-This is the README for your extension "vscode-mock". After writing up a brief description, we recommend including the following sections.
+VSCode Extensions開発用に使用しているVSCodeの`Interface`と`Mocks`。  
+VSCode自体は`mocha`を使用したBehaviorテストに対応しているが、もう少し細かい粒度でテストを書きたい場合は、InterfaceやMockがあった方が便利なので作成。  
 
-## Features
+### ⚠注意書き
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+ただし、VSCodeのUpdateによって、公開されているInterfaceが変更になると修正がなかなか大変なので、大規模なシステムにはあまりおすすめしない。
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+### 前提
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+依存性の注入(DI: Dependency injection)を使用する前提の構成のため、使用する場合は下記のPackageのInstallを推奨する。  
 
-## Requirements
+```sh
+npm install inversify reflect-metadata
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+# or
 
-## Extension Settings
+yarn add inversify reflect-metadata
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### 1. MockとInterfaceを使用したいプロジェクトを用意する
 
-For example:
+VSCode拡張機能の開発を想定しているため、まずはプロジェクトを作成する。
 
-This extension contributes the following settings:
+```sh
+yo code
+```
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+### 2. 作成したプロジェクトに`mock`と`model`を作成する
 
-## Known Issues
+プロジェクトを作成したら、作成したプロジェクトの絶対パスを引数に与えて、下記のコマンドを実行する。
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+```sh
+# 作成したいディレクトリを指定する。対象ディレクトリ配下に`models/vscod`, `mocks`が作成される。
+npx ts-node src/index.ts -o /workspace/new-vscode-extensions/src
+```
 
-## Release Notes
+## Author
 
-Users appreciate release notes as you update your extension.
+- [atEaE](https://github.com/atEaE)
 
-### 1.0.0
+## License
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT. 詳細については[こちら](./LICENSE)をご覧ください。
